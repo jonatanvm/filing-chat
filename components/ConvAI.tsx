@@ -35,7 +35,7 @@ interface ChatHistory {
 }
 
 export function ConvAI() {
-    const bottomRef = useRef<HTMLDivElement>(null)
+    const bottomRef = useRef<HTMLLIElement>(null)
     const [chatHistory, setChatHistory] = useState<ChatHistory[]>([])
     const [copied, setCopied] = useState<boolean>(false)
     const conversation = useConversation({
