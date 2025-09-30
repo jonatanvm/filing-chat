@@ -66,9 +66,9 @@ export function ConvAI() {
             alert("No permission");
             return;
         }
+        const signedUrl = await getSignedUrl();
         const conversationId = await conversation.startSession({
-            agentId: "agent_7101k6b34s2nefpszsy99j93sdse",
-            connectionType: 'webrtc',
+            signedUrl,
         });
         console.log(conversationId);
     }
@@ -95,7 +95,7 @@ export function ConvAI() {
     const handleCopy = async () => {
         let text = "";
         chatHistory.forEach((chat) => {
-            text += `${chat.source}: ${chat.message}`
+            text += `${chat.source}: ${chat.message}\n\n`
         })
         try {
             await navigator.clipboard.writeText(text);
@@ -178,7 +178,6 @@ export function ConvAI() {
                                 </div>
                             )}
                         </div>
-
                     </CardContent>
                 </Card>
 
