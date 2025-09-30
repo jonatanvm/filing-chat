@@ -166,8 +166,8 @@ export function ConvAI() {
                         <div className={"flex flex-col  text-sm"}>
                             {chatHistory.length > 0 ? (
                                 <ul className={'flex flex-col gap-2 overflow-y-auto max-h-[400px]'}>
-                                    {chatHistory.map((history) => (
-                                        <li key={history.message}
+                                    {chatHistory.map((history, index) => (
+                                        <li key={index}
                                             className={cn(' rounded-lg p-2', history.source === 'ai' ? 'mr-8 bg-gray-100' : 'ml-8 bg-blue-100')}>{history.message}</li>
                                     ))}
                                     <li ref={bottomRef}/>
