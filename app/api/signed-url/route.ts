@@ -8,7 +8,7 @@ export async function GET() {
   }
   const apiKey = process.env.XI_API_KEY;
   if (!agentId) {
-    throw Error("AGENT_ID is not set");
+    throw Error("XI_API_KEY is not set");
   }
   try {
     const client = new ElevenLabsClient({ apiKey });
